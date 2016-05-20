@@ -54,6 +54,10 @@ module.exports = function cssTransformToMatrix(value) {
         matrix = createMatrix();
         value = value.split(',').map(parseFloat);
 
+        if(value.length === 1){
+            value.push(value[0]);
+        }
+
         if(value.length === 2) {
           value.push(0);
         }
