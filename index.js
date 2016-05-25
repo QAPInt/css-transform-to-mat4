@@ -55,11 +55,11 @@ module.exports = function cssTransformToMatrix(value) {
         value = value.split(',').map(parseFloat);
 
         if(value.length === 1){
-            value.push(value[0]);
+          value.push(0);//add default Y translate value
         }
 
         if(value.length === 2) {
-          value.push(0);
+          value.push(0);//add default Z translate value
         }
 
         mat4Translate(matrix, matrix, value);
